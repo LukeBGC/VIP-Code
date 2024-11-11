@@ -88,6 +88,12 @@ print(cluster_labels)
 pca = PCA(n_components=2)
 X_pca = pca.fit_transform(X_scaled)
 
+font = {'family' : 'sans-serif',
+        'weight' : 'bold',
+        'size'   : 22}
+
+plt.rc('font', **font)
+
 plt.scatter(X_pca[:, 0], X_pca[:, 1], c=cluster_labels, cmap='viridis', s=100)
 plt.title('K-Means Clusters of IMU Data Across Trials')
 plt.xlabel('PCA Component 1')
